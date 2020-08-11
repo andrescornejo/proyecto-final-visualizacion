@@ -13,3 +13,7 @@
  - [Highchart graph with angular demo](https://stackblitz.com/edit/highcharts-angular-map)
  - [Highchart map collection](https://www.highcharts.com/docs/maps/map-collection)
  - [Fix: Consider using '--resolveJsonModule' to import module with '.json' extension](https://stackoverflow.com/questions/50924901/angular-6-load-json-from-local)
+ 
+
+ ## Data cleaning:
+ - [Pandas, select element by string](https://davidhamann.de/2017/06/26/pandas-select-elements-by-string/)
