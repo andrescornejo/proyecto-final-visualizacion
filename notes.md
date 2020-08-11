@@ -11,3 +11,5 @@
  - [Highchart-angular repo](https://github.com/highcharts/highcharts-angular#installing)
  - [Multiline string in Angular TS](https://stackoverflow.com/questions/35225399/typescript-angular-multiline-string)
  - [Highchart graph with angular demo](https://stackblitz.com/edit/highcharts-angular-map)
+ - [Highchart map collection](https://www.highcharts.com/docs/maps/map-collection)
+ - [Fix: Consider using '--resolveJsonModule' to import module with '.json' extension](https://stackoverflow.com/questions/50924901/angular-6-load-json-from-local)
