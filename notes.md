@@ -14,6 +14,8 @@
  - [Highchart map collection](https://www.highcharts.com/docs/maps/map-collection)
  - [Fix: Consider using '--resolveJsonModule' to import module with '.json' extension](https://stackoverflow.com/questions/50924901/angular-6-load-json-from-local)
  
+## Other 
+- [Accessing local files with typescript](https://stackoverflow.com/questions/33643107/read-and-write-a-text-file-in-typescript)
 
- ## Data cleaning:
+## Data cleaning:
  - [Pandas, select element by string](https://davidhamann.de/2017/06/26/pandas-select-elements-by-string/)

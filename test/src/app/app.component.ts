@@ -2,6 +2,22 @@ import { Component } from "@angular/core";
 import Highcharts from "highcharts/highmaps";
 import { Options } from "highcharts";
 import worldMap from "@highcharts/map-collection/custom/world.geo.json";
+import { HighchartsChartModule } from 'highcharts-angular';
+import HC_data from "highcharts/modules/data";
+import { FormStyle } from '@angular/common';
+import { convertCSVToArray } from "convert-csv-to-array";
+
+const data = 'number;first;last;handle\n1;Mark;Otto;@mdo\n2;Jacob;Thornton;@fat\n3;Larry;the Bird;@twitter\n';
+const data2 = new FileReader()
+const xD= convertCSVToArray('../assets/data.csv', {
+  type: 'array',
+  separator: ';', // use the separator you use in your csv (e.g. '\t', ',', ';' ...)
+});
+
+for(var i = 0;i<xD.length;i++) { 
+   xD[i] = i * 2 
+   console.log(xD[i]) 
+}
 
 @Component({
   selector: "my-app",
@@ -11,18 +27,20 @@ import worldMap from "@highcharts/map-collection/custom/world.geo.json";
 export class AppComponent {
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor = "mapChart";
-  chartData = [{ code3: "ABW", z: 105 }, { code3: "AFG", z: 35530 }];
+  chartOptions: Highcharts.Options;
 
-  chartOptions: Options = {
+  // chartData = [{ code3: "ABW", z: 105 }, { code3: "AFG", z: 35530 }];
+  ngOnInit() {
+    this.mapChart();
+  }
+
+  mapChart() {
+    this.chartOptions = {
     chart: {
-      map: worldMap as any
+      map: worldMap
     },
     title: {
       text: "Highmaps basic demo"
-    },
-    subtitle: {
-      text:
-        'Source map: <a href="http://code.highcharts.com/mapdata/custom/world.js">World, Miller projection, medium resolution</a>'
     },
     mapNavigation: {
       enabled: true,
@@ -267,5 +285,31 @@ export class AppComponent {
         ]
       }
     ]
-  };
+      // series: [
+      // {
+      //   // mapData: worldMap,
+      //   type: "map",
+      //   name: "Random data",
+      //   states: {
+      //     hover: {
+      //       color: "#BADA55"
+      //     }
+      //   },
+      //   dataLabels: {
+      //     enabled: true,
+      //     format: "{point.name}"
+      //   },
+      // }]
+
+
+      // series: [{
+      //   data
+      // }],
+
+      // data:{
+      //   csvURL: "./assets/data.csv",
+      // },
+      
+    };
+  }
 }
