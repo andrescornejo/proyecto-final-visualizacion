@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { WidgetsModule } from 'src/app/widgets/widgets.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
     CommonModule,
     RouterModule,
     SharedModule,
+    WidgetsModule,
     MatSidenavModule,
     MatDividerModule
   ]
