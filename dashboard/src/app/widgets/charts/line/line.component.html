@@ -1,0 +1,34 @@
+<mat-drawer-container>
+
+    <div flex layout="row">
+        <div>
+            <h4>Region</h4>
+            <mat-form-field appearance="fill">
+              <mat-select [(value)]="region">
+                <mat-option *ngFor="let r of regions" [value]="r.value">
+                  {{r.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <h4>Año</h4>
+            <mat-form-field appearance="fill">
+              <mat-select [(value)]="country">
+                <mat-option *ngFor="let c of countries" [value]="c.value">
+                  {{c.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div>line chart</div>
+        <p>description</p>
+    </div>
+    
+    
+
+    
+
+</mat-drawer-container>
