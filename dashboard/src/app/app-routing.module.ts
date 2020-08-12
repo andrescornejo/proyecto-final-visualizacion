@@ -2,6 +2,7 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DefaultComponent } from './layout/default/default.component';
+import { WidgetsModule } from './widgets/widgets.module';
 
 const routes: Routes = [{
   path: '',
@@ -9,7 +10,10 @@ const routes: Routes = [{
   children: [{
     path: '',
     component:  DashboardComponent
-  },]
+  }, {
+    path: 'widgets',
+    component: WidgetsModule
+  }]
 }];
 
 @NgModule({

@@ -6,6 +6,7 @@ import { ScatterPlotComponent } from './charts/scatter-plot/scatter-plot.compone
 import { } from './charts/line/line.component';
 import { SunburstComponent } from './charts/sunburst/sunburst.component'
 import { TreemapComponent } from './charts/treemap/treemap.component'
+import { MatSidenavModule } from '@angular/material/sidenav'
 
 
 
@@ -19,6 +20,7 @@ import { TreemapComponent } from './charts/treemap/treemap.component'
   ],
   imports: [
     CommonModule,
+    MatSidenavModule
   ],
   exports: [
     ChoroplethComponent,
