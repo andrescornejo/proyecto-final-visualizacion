@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { WidgetsModule } from 'src/app/widgets/widgets.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { WidgetsModule } from 'src/app/widgets/widgets.module';
     SharedModule,
     WidgetsModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    FlexLayoutModule
   ]
 })
 export class DefaultModule { }

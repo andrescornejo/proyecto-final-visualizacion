@@ -4,11 +4,12 @@ import { ChoroplethComponent } from './charts/choropleth/choropleth.component'
 import { LineComponent } from './charts/line/line.component'
 import { ScatterPlotComponent } from './charts/scatter-plot/scatter-plot.component'
 import { } from './charts/line/line.component';
-import { SunburstComponent } from './charts/sunburst/sunburst.component'
-import { TreemapComponent } from './charts/treemap/treemap.component'
-import { MatSidenavModule } from '@angular/material/sidenav'
-
-
+import { SunburstComponent } from './charts/sunburst/sunburst.component';
+import { TreemapComponent } from './charts/treemap/treemap.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,11 @@ import { MatSidenavModule } from '@angular/material/sidenav'
   ],
   imports: [
     CommonModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    
   ],
   exports: [
     ChoroplethComponent,
