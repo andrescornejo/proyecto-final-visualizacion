@@ -1,0 +1,37 @@
+<mat-drawer-container style="height: 500px;">
+    <mat-drawer mode=side opened style="width: 70%;">
+      <div>
+        <h4>Año</h4>
+        <mat-form-field appearance="fill">
+          <mat-select [(value)]="selected">
+            <mat-option *ngFor="let year of years" [value]="year.value">
+              {{year.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+      <div>
+        choropleth map
+      </div>
+      
+
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="height: 50%;">
+            Este mapa permite navegar por medio por él analizando la información de cada pais, puede
+            seleccionar los diferentes años para ver el contraste de las temperatueras 
+            registradas para cada pais durante los años
+        </div>
+
+        <div>
+          <highcharts-chart
+          [Highcharts]=Highcharts
+          [options]=barOptions
+          style="width: 100%; height: 200px; display: block;"
+          ></highcharts-chart>
+        </div>
+        
+    </mat-drawer-content>
+
+</mat-drawer-container>

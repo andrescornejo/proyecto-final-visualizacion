@@ -1,0 +1,25 @@
+<mat-drawer-container style="height: 600px;">
+  <div>
+    <div class="div-inline">
+      <h4>Region</h4>
+      <mat-form-field appearance="fill">
+        <mat-select [(value)]="region">
+          <mat-option *ngFor="let r of regions" [value]="r.value">
+            {{r.view}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div>
+    <highcharts-chart [Highcharts]=Highcharts [options]=chartOptions style="width: 100%; height: 400px; display:contents">
+    </highcharts-chart>
+  </div>
+
+  <div style="width: 90%;">
+    <p>
+      Este grafico
+    </p>
+  </div>
+</mat-drawer-container>
