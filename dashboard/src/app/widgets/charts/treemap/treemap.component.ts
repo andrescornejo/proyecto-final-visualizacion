@@ -1,12 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as  Highcharts from 'highcharts';
 
-var data: string;
-data = "";
-var points = [];
-
-
-
 
 @Component({
   selector: 'app-treemap',
@@ -18,33 +12,30 @@ export class TreemapComponent implements OnInit {
 
   Highcharts = Highcharts;
   chartOptions: {};
-  
+
 
   ngOnInit(): void {
-
     this.chartOptions = {
-      series: [{
+      chart: {
+        type: 'treemap',
+        height: '100%'
+      },
+      title: {
+        text: 'Temperatura promedio según región'
+      },
+      series: [/*{
         type: 'treemap',
         layoutAlgorithm: 'squarified',
         allowDrillToNode: true,
         animationLimit: 1000,
         dataLabels: {
-            enabled: false
+          enabled: false
         },
         levelIsConstant: false,
-        levels: [{
-            level: 1,
-            dataLabels: {
-                enabled: true
-            },
-            borderWidth: 3
-        }],
-        data: points
-    }],
-    title: {
-        text: 'Temperatura promedio según región'
-    }
-  };
+        levels: [],
+        data: []
+      }*/],
+    };
   }
 
 }
