@@ -33,12 +33,12 @@ export class ScatterPlotComponent implements OnInit {
         zoomType: 'xy'
       },
       title: {
-        text: 'Temperaturas registradas por región, según país y año'
+        text: 'Temperaturas registradas por región'
       },
       xAxis: {
         title: {
           enabled: true,
-          text: 'Height (cm)'
+          text: 'temperatura'
         },
         startOnTick: true,
         endOnTick: true,
@@ -46,7 +46,7 @@ export class ScatterPlotComponent implements OnInit {
       },
       yAxis: {
         title: {
-          text: 'Weight (kg)'
+          text: 'Año'
         }
       },
       legend: {
