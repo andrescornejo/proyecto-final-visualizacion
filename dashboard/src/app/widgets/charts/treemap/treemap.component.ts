@@ -18,6 +18,7 @@ export class TreemapComponent implements OnInit {
 
   Highcharts = Highcharts;
   chartOptions: {};
+  
 
   ngOnInit(): void {
 
