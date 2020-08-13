@@ -23,6 +23,7 @@
     "convert-csv-to-array": "^1.0.3",
     "highcharts": "^8.1.2",
     "highcharts-angular": "^2.7.0",
+    "ng5-slider": "^1.2.4",
     "papaparse": "^5.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",

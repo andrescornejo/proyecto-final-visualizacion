@@ -1,27 +1,24 @@
 import { Component } from "@angular/core";
 import Highcharts from "highcharts/highmaps";
-import { Options } from "highcharts";
 import worldMap from "@highcharts/map-collection/custom/world.geo.json";
-import { HighchartsChartModule } from 'highcharts-angular';
-import HC_data from "highcharts/modules/data";
 import { FormStyle } from '@angular/common';
 import { convertCSVToArray } from "convert-csv-to-array";
+import { Options, ChangeContext } from 'ng5-slider';
 
 //This function takes a csv formatted string, and the year to be filtered
 //It outputs an array with the map data
 //The array format is [iso-a2,value]
 function create_array(input:string, year:string):string[][]{
-  console.log(year);
+  //Convert the csv to a normal array
   const arr= convertCSVToArray(input, {
     type: 'array',
     header: false,
-    separator: ',', // use the separator you use in your csv (e.g. '\t', ',', ';' ...)
+    separator: ',', 
   });
-  //Create the filtered array.
+  //Create the array with the filtered information.
   var new_arr:string[][] = new Array;
   for (var i = 0; i < arr.length; i++) {
-    if(arr[i][0]=='2010'){
-      console.log(arr[i][1])
+    if(arr[i][0]==year){
       new_arr.push([arr[i][3],arr[i][1]])
     }
   }
@@ -34,16 +31,35 @@ function create_array(input:string, year:string):string[][]{
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
+  //Definition of the initial year.
+  year = 1980;
+  data_str:string; 
+
+  //Definiton of the slider.
+  value: number = this.year;
+  options: Options = {
+    floor: 1980,
+    ceil: 2013,
+    showTicks: true,
+  };
+  //Definition of the choropleth map.
   Highcharts: typeof Highcharts = Highcharts;
   chartConstructor = "mapChart";
   chartOptions: Highcharts.Options;
+  
+  onUserChangeEnd(changeContext: ChangeContext): void {
+    this.year = this.value;
+    this.ngOnInit();
+  }
 
-  // chartData = [{ code3: "ABW", z: 105 }, { code3: "AFG", z: 35530 }];
   ngOnInit() {
-    let year='2010';
-    let data_str = document.getElementById('csv').innerHTML;
+    this.data_str = document.getElementById('csv').innerHTML;
+    this.createMap()
+  }
 
-    var data_array = create_array(data_str,year);
+  createMap(){
+    var year= this.year.toString();
+    var data_array = create_array(this.data_str,year);
     this.mapChart(data_array, year);
   }
 
