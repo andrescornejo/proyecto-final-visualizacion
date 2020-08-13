@@ -7,8 +7,6 @@ interface Region {
   view: string;
 }
 
-var data = "";
-
 @Component({
   selector: 'app-scatter-plot',
   templateUrl: './scatter-plot.component.html',
