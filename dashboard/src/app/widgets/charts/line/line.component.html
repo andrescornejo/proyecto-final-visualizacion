@@ -1,35 +1,17 @@
 <mat-drawer-container style="height: 600px;">
-  <div>
-    <div class="div-inline">
-      <h4>Region</h4>
-      <mat-form-field appearance="fill">
-        <mat-select [(value)]="region">
-          <mat-option *ngFor="let r of regions" [value]="r.value">
-            {{r.view}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
+  <div style="height: 110px;">
 
-    <div class="div-inline">
-      <h4>Año</h4>
-      <mat-form-field appearance="fill">
-        <mat-select [(value)]="country">
-          <mat-option *ngFor="let c of countries" [value]="c.value">
-            {{c.view}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
   </div>
-
   <div>
     <highcharts-chart [Highcharts]=Highcharts [options]=chartOptions style="width: 100%; height: 400px; display:contents">
     </highcharts-chart>
   </div>
   <div style="width: 90%;">
-    <p>Este gráfico de lineas muestra el cambio de temperatura a lo
-      largo del tiempo para los países de un continente
+    <p>Este gráfico de lineas muestra el cambio de temperatura promedio por año
+      a lo largo del tiempo para de los continentes, se puede apreciar en una
+      de tiempo del tiempo las diferencias.
+      Se puede apreciar con mayor detalle las temperaturas para una región seleccionando en la parte superior 
+      la región.
     </p>
   </div>
 
