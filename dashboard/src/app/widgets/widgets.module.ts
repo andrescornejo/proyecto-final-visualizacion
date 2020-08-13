@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatDividerModule,
     MatFormFieldModule,
     MatSelectModule,
-    
+    HighchartsChartModule,
   ],
   exports: [
     ChoroplethComponent,
