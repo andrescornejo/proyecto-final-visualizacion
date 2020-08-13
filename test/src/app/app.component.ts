@@ -44,16 +44,16 @@ export class AppComponent {
     let data_str = document.getElementById('csv').innerHTML;
 
     var data_array = create_array(data_str,year);
-    this.mapChart(data_array);
+    this.mapChart(data_array, year);
   }
 
-  mapChart(data_arr) {
+  mapChart(data_arr, year:string) {
     this.chartOptions = {
     chart: {
       map: worldMap
     },
     title: {
-      text: "Highmaps basic demo"
+      text: "Global temperatures in the year "+year
     },
     mapNavigation: {
       enabled: true,
@@ -65,15 +65,25 @@ export class AppComponent {
       enabled: true
     },
     colorAxis: {
-        min: 0,
-        max: 35,
-        minColor: '#ADD8E6',
-        maxColor: '#FF2500',
+        labels: {
+            format: '{value} °C'
+        },
+        min: 1,
+        type: 'linear',
+        minColor: '#EEEEFF',
+        maxColor: '#000022',
+        stops: [
+            [0, '#ADD8E6'],
+            [0.25, '#7fff00'],
+            [0.5, '#f7f705'],
+            [0.75, '#ff4f00'],
+            [1, '#a90303']
+        ]
     },
     series: [
       {
         type: "map",
-        name: "Random data",
+        name: "Temperature",
         states: {
           hover: {
             color: "#BADA55"
@@ -82,6 +92,9 @@ export class AppComponent {
         dataLabels: {
           enabled: true,
           format: "{point.name}"
+        },
+        tooltip: {
+          pointFormat: '{point.name}: {point.value} °C'
         },
         allAreas: false,
         joinBy: ['iso-a2', 'hc-key'],
