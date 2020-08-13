@@ -1,6 +1,4 @@
-<mat-drawer-container style="height: 100%;">
-
-
+<mat-drawer-container style="height: 500px;">
     <mat-drawer mode=side opened style="width: 70%;">
       <div>
         <h4>Año</h4>
@@ -12,21 +10,26 @@
           </mat-select>
         </mat-form-field>
       </div>
-
+      
       <div>
         choropleth map
       </div>
       
 
     </mat-drawer>
-
     <mat-drawer-content>
-        <div>
-            description
+        <div style="height: 50%;">
+            Este mapa permite navegar por medio por él analizando la información de cada pais, puede
+            seleccionar los diferentes años para ver el contraste de las temperatueras 
+            registradas para cada pais durante los años
         </div>
 
         <div>
-            bar charts
+          <highcharts-chart
+          [Highcharts]=Highcharts
+          [options]=barOptions
+          style="width: 100%; height: 200px; display: block;"
+          ></highcharts-chart>
         </div>
         
     </mat-drawer-content>
