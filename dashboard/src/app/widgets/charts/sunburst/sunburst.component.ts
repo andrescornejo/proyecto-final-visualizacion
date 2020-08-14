@@ -26,6 +26,45 @@ export class SunburstComponent implements OnInit {
 
     ngOnInit(): void {
         this.chartOptions = {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Temperaturas más altas registradas en la historia'
+        },
+        xAxis: {
+            title: 'Pais',
+            type: 'category'
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Temperatura'
+            }
+        },
+        plotOptions: {
+
+        },
+        series: [{
+            name: 'Temperatura',
+            color: 'rgba(186,60,61,.9)',
+            data:[
+                ['Esatdos Unidos',56.7],
+                ['Túnez', 55.0],
+                ['Kuwait',54.2],
+                ['Irak',53.9],
+                ['Israel',53.9]
+            ]
+        }]
+    };
+}
+
+};
+
+
+
+/*
+this.chartOptions = {
             chart: {
                 type: "sunburst",
                 height: '100%'
@@ -39,6 +78,4 @@ export class SunburstComponent implements OnInit {
                 pointFormat: 'La temperatura promedio de <b>{point.name}</b> es <b>{point.value}</b>'
             }
         };
-    }
-
-}
+*/
