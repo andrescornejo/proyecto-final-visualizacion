@@ -1,24 +1,66 @@
 <mat-drawer-container>
   <div>
-    <h4>Año</h4>
-    <mat-form-field appearance="fill">
-      <mat-select [(value)]="selected">
-        <mat-option *ngFor="let year of years" [value]="year.value">
-          {{year.value}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <h1>Evolución de la temperatura global</h1>
+    <mat-divider></mat-divider>
+    <h4>El registro de temperaturas muestra las fluctuaciones de la temperatura de la atmósfera 
+    y de los océanos a través 
+    de varios tramos de tiempo. La información más detallada existente comienza en 1850
+    </h4>
+    <div layout='row'>
+     <div class= div-inline style="width: 50%;">
+      <highcharts-chart 
+      [Highcharts]=Highcharts
+      [options]=chartOptions
+      style="width: 40%; height: 300px; display:contents;"
+      ></highcharts-chart>
+      </div>
+      <div class="div-inline" style="width: 50%;height: 350px;">
+        <h2>Datos Interesantes</h2>
+        <ol>
+          <li>
+            <h4>El Sol es una gigantesca marmita ardiendo. Su interior arde a 15 millones ºC. Allí se producen las reacciones de fusión nuclear que liberan la energía que ilumina nuestro sistema planetario. La superficie de la estrella brilla a ‘tan solo’ 6.000 ºC.</h4>
+          </li>
+          <li>
+            <h4>En los días calurosos y húmedos de verano son comunes las tormentas eléctricas. Calientan el aire que se expande violentamente y produce el sonido, los truenos. Algunos rayos alcanzan temperaturas de 25.000 ºC.</h4>
+          </li>
+          <li>
+            <h4>El núcleo de la Tierra está formado en su mayoría por hierro y níquel fundido a altísima presión y a casi 6.000 ºC, una temperatura muy cercana a la de la superficie del Sol. </h4>
+          </li>
+          <li>
+            <h4>Los volcanes en plena erupción escupen magma a más de 1.300 ºC. Para medir las variaciones de la temperatura del magma los vulcanólogos usan un termómetro eléctrico especial llamado termopar.</h4>
+          </li>
+        </ol>
+      </div>
+    </div>
+      <div style="width: 50%;">
+        <h4>La temperatura más alta registrada de la historia se midió en el Valle de la Muerte, California, un día como hoy, 
+          10 de julio, pero de 1913, cuando los termómetros marcaron los 56,7 grados centígrados
+        </h4>
+    </div>
   </div>
 
-  <div>
-    <highcharts-chart 
-    [Highcharts]=Highcharts
-    [options]=chartOptions
-    style="width: 100%; height: 400px; display:block;"
-    ></highcharts-chart>
-  </div>
-
-  <p>
-      Este grafico tipo sunburst muestra información sobre las temperaturas por año, según region
-  </p>
 </mat-drawer-container> 
+
+
+<div style="display:none">
+  <h4>Año</h4>
+  <mat-form-field appearance="fill">
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let year of years" [value]="year.value">
+        {{year.value}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div style="display:none">
+  <highcharts-chart 
+  [Highcharts]=Highcharts
+  [options]=chartOptions
+  style="width: 100%; height: 400px; display:block;"
+  ></highcharts-chart>
+</div>
+
+<p style="display:none">
+    Este grafico tipo sunburst muestra información sobre las temperaturas por año, según region
+</p>
