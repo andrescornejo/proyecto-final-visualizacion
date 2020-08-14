@@ -95,6 +95,17 @@ export class ChoroplethComponent implements OnInit{
             [1, '#a90303']
         ]
     },
+    plotOptions:{
+        series:{
+            point:{
+                events:{
+                    click: function(){
+                        alert(this.name);
+                    }
+                }
+            }
+        }
+    },
     series: [
       {
         type: "map",

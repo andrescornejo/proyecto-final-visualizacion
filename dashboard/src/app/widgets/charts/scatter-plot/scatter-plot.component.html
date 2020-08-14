@@ -3,7 +3,7 @@
     <div class="div-inline">
       <h4>Region</h4>
       <mat-form-field appearance="fill">
-        <mat-select [(value)]="region" (valueChange)= "onOptionSelected($any)" name="action">
+        <mat-select [(value)]="region" (valueChange)= "onOptionSelected()" name="action">
           <mat-option *ngFor="let r of regions" [value]="r.value">
             {{r.view}}
           </mat-option>
