@@ -14,7 +14,8 @@ export class LineComponent implements OnInit {
 
   ngOnInit(): void {
     this.chartOptions = {
-      title: {
+    
+        title: {
         text: 'Temperatura maxima por año, según región'
     },
     yAxis: {
@@ -31,7 +32,7 @@ export class LineComponent implements OnInit {
 
     legend: {
         layout: 'vertical',
-        align: 'right',
+        align: 'left',
         verticalAlign: 'middle'
     },
 
@@ -40,27 +41,11 @@ export class LineComponent implements OnInit {
             label: {
                 connectorAllowed: false
             },
-            pointStart: 1980,
-            pointEnd: 2013
+            pointStart: 1980
         }
     },
 
     series: data,
-
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 500
-            },
-            chartOptions: {
-                legend: {
-                    layout: 'horizontal',
-                    align: 'center',
-                    verticalAlign: 'bottom'
-                }
-            }
-        }]
-    }
     }
   }
 
